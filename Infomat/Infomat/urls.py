@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
+from django.views.decorators.cache import cache_page
+from Clinica.views import *     # import all views
+from django.urls import include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('Clinica.urls')),
 ]
+
