@@ -1,0 +1,70 @@
+{% load static %}
+
+<!--подключения внешних статических файлов к шаблону; нужно добавить логику на смену шапки при вхождении в личный кабинет-->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!--путь указываем относительно папки static для подключения стилей css-->
+    <link type = 'text/css'rel="stylesheet" href="{% static 'Clinica/css/style.css' %}"/>
+    <script src="{% static 'Clinica/js/script.js' %}"></script>
+    {% block header %}
+    {% endblock header %}
+
+    <!--определите ключевые слова для поисковых систем  SEO-->
+        <meta name="keywords" content="Репьевская РБ">
+        <meta http-equiv="Refresh" content="50" /> <!--auto refresh-->
+
+</head>
+<body>
+<div>
+    <nav class="navbar" >
+        <div class="container">
+            <a href="{% url 'index' %}" class="navbar-brand">Репьевская РБ</a>
+
+             <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li><a href="{% url 'index' %}">Домашняя</a></li>
+                    <li><a href="{% url 'news' %}">Новости</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+{% block body %}
+
+{% endblock body %}
+
+
+{% block footer %}
+<section>
+    <footer style="background-color: rgba(33, 37, 41)">
+
+    <table style="width:100%;">
+        <tr>
+            <td align="center" style="width:40%">
+                <a href="https://vk.com/fisenko_maxim/" target="_blank">
+                    <img src="https://maxon-vrn.github.io/appartment_vrn/static/img/vk.png" alt='VK' style="width:42px;height:42px;"></a>
+                <a href="https://t.me/Fisenko_Maxim/" target="_blank">
+                    <img src="https://maxon-vrn.github.io/appartment_vrn/static/img/telegram.png" style="width:42px;height:42px;"></a>
+                <a href="https:///" target="_blank">
+                    <img src="https://maxon-vrn.github.io/appartment_vrn/static/img/youtube.png" style="width:42px;height:42px;"></a>
+            </td>
+
+            <!--Maps-->
+            <td >
+                <div class="rb_map"></div>
+                <!--<img src="static/Clinica/images/map.png" alt="RB_map" >-->
+            </td>
+        </tr>
+    </table>
+        <p align="center" style="color: white;padding: 15px;margin-top: -10px;"> авторские права</p>
+    </footer>
+</section>
+{% endblock footer %}
+</body>
+
+</html>

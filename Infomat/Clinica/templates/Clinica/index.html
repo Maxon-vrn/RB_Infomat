@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
-</head>
-<body>
-    <h2>Index pages</h2>
-    <p>other text</p>
-</body>
-</html>
+{% extends 'Clinica/base.html' %}
+
+{% block header %}
+<title>Главная страница</title>
+{% endblock header %}
+
+{% block body %}
+<div style="background-color: rgba(33, 37, 41);margin-top: -1%;">
+    <p>Идет подключение перелистывающегося элемента с заполнением через базу данны</p>
+</div>
+
+<div align="center">
+    <h1>Добро пожаловать</h1>
+    <p>в поликлинику БУЗ ВО Репьёвская РБ!</p>
+</div>
+<div>
+    <p> 4 blok to text on sql </p>
+</div>
+
+{% endblock body %}
+
