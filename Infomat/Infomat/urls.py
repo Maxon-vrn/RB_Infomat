@@ -25,4 +25,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Clinica.urls')),
 ]
-
+handler404 = pageNotFound
