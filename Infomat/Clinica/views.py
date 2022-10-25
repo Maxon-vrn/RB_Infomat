@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.views.generic import ListView
 
+from Clinica.admin import AllPostAdmin
 from Clinica.models import AllPost
 
 
@@ -23,9 +24,9 @@ class News(ListView):  # in listview есть пагинатор для отоб
     template_name = 'Clinica/news.html'
     context_object_name = 'posts'  # переменная используемая в шаблоне при работе с бд
 
-    def get_queryset(self):  #
-        return AllPost.objects.filter(
-            is_published=True)  # возвращает только опубликованные в админке записи на страницу
+    #def get_queryset(self):  #
+     #   return AllPostAdmin.objects.filter(
+      #      is_published=True)  # возвращает только опубликованные в админке записи на страницу
 
 
 def show_news(request, post):
