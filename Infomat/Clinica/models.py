@@ -4,14 +4,14 @@ from django.urls import reverse
 
 # Create your models here.
 class AllPost(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Заголовок', default=' ',
-                             help_text="Заголовок")  # name model avto
+    title = models.CharField(max_length=255, verbose_name='Заголовок', default=' ',help_text="Заголовок")  # name model avto
+    description = models.TextField(verbose_name='Описание статьи', default=' ', help_text="Описание статьи")  # max_length?
     photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', default=' ')  # 1 слайд
     photo2 = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', default=' ', blank=True)  # 2 слайд
     photo3 = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', default=' ', blank=True)  # 3 слайд
     photo4 = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', default=' ', blank=True)  # 4 слайд
     photo5 = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', default=' ', blank=True)  # 5 слайд
-    text = models.TextField(verbose_name='Содержание книги', default=' ', help_text="Содержание книги")  # max_length?
+    text = models.TextField(verbose_name='Содержание статьи', default=' ', help_text="Содержание статьи",blank=True)  # max_length?
     responsible = models.CharField(max_length=255, verbose_name='Ответственный', default=' ', help_text="Ответственный")
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     is_published = models.BooleanField(default=True, verbose_name='Публикация')

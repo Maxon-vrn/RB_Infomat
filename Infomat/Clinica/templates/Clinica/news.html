@@ -11,14 +11,14 @@
         <table style="width: 100%;">
             <td style="width:30%;padding-left: 5%;">
                 {% if i.photo %}
-                    <p><img src="{{ i.photo.url }}" alt="foto_cars" style="height:200px;width:300px;border:3px;float:left"></p>
+                    <p><img src="{{ i.photo.url }}" alt="foto_news" style="height:200px;width:300px;border:3px;float:left"></p>
+                    <!--address is not valid?-->
                 {% endif %}
             </td>
             <td style="width:70%;padding-left: 5%;padding-right: 5%;">
                 <h3 >{{i.title}}</h3>
-                <p>Год производства автомобиля: {{ i.year_avto|date:'Y'}}</p>
-                <p>Пробег автомобиля: {{ i.distance}}</p>
-                <p >Описание автомобиля: {{i.content}}</p>
+                <p>{{i.description}}</p>
+                <p>подробнее</p><!--we mast button paste in page-->
             </td>
         </table>
         <hr>
