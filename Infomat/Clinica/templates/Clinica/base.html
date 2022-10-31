@@ -27,7 +27,8 @@
                 <ul class="navbar-menu">
                     <li><a href="{% url 'index' %}">Домашняя</a></li>
                     <li><a href="{% url 'news' %}">Новости</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="{% url 'arhiv_news' %}">Архив новостей</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -39,10 +40,7 @@
 {% endblock body %}
 
 
-{% block footer %}
-<section>
-    <footer style="background-color: rgba(33, 37, 41)">
-
+<div class="footers">
     <table style="width:100%;">
         <tr>
             <td align="center" style="width:40%">
@@ -57,14 +55,13 @@
             <!--Maps-->
             <td >
                 <div class="rb_map"></div>
-                <!--<img src="static/Clinica/images/map.png" alt="RB_map" >-->
+                    <!--<img src="static/Clinica/images/map.png" alt="RB_map" >-->
             </td>
         </tr>
     </table>
-        <p align="center" style="color: white;padding: 15px;margin-top: -10px;"> авторские права</p>
-    </footer>
-</section>
-{% endblock footer %}
-</body>
+        <p align="center" style="color: white;padding: 15px;margin-top: -10px;">
+            Все авторские права принадлежат их правообладателям. Данный сервис носит исключительно информационный и ознакомительный характер.</p>
+</div>
 
+</body>
 </html>

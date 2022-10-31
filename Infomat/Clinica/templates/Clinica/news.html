@@ -1,10 +1,13 @@
 {% extends 'Clinica/base.html' %}
 
+
 {% block header %}
 <title>Новости</title>
 {% endblock header %}
 
 {% block body %}
+    {% csrf_token %}
+    {{ form.as_p }}
 
     <ul style="list-style-type:none;" enctype="multipart/form-data">
         {% for i in posts %}
@@ -18,12 +21,13 @@
             <td style="width:70%;padding-left: 5%;padding-right: 5%;">
                 <h3 >{{i.title}}</h3>
                 <p>{{i.description}}</p>
-                <p>подробнее</p><!--we mast button paste in page-->
+                <input class="button_forms" align="center" type="submit" name="Отправить" id="submit"><!--кнопка для отправки get запроса и формирования полной страницы-->
             </td>
         </table>
         <hr>
     {% endfor %}
     </ul>
+
     {% if page_obj.has_other_pages %} <!--нумерация перелистывания сработает если больше 5ти постов на странице, заданы вo view-->
     <nav align='center' class="#">
         <ul>

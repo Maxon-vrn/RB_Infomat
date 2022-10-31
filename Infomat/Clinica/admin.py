@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 # Register your models here.
 
 class AllPostAdmin(admin.ModelAdmin):
-    list_display =('id','title','description','text','responsible','get_html_photo','photo2','photo3','photo4','photo5','is_published')
+    list_display =('id','title','description','text','responsible','get_html_photo','photo','is_published')
     list_display_links = ('id', 'title')  # поля на которые мы можем кликнут  и перейти
     search_fields = ('title', 'text')  # по каким поля м можно искать информацию
     list_editable = ('is_published',)  # возможноть снимать с публикации рчерез админку

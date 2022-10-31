@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.views.generic import ListView
 
@@ -23,10 +22,11 @@ class News(ListView):  # in listview есть пагинатор для отоб
     model = AllPost  # обязательно наличие модели для данного представления!
     template_name = 'Clinica/news.html'
     context_object_name = 'posts'  # переменная используемая в шаблоне при работе с бд
+    print()
 
-    #def get_queryset(self):  #
-     #   return AllPostAdmin.objects.filter(
-      #      is_published=True)  # возвращает только опубликованные в админке записи на страницу
+    def get_queryset(self):
+        return AllPost.objects.filter(
+            is_published=True)  # возвращает только опубликованные в админке записи(выбранные из модели) на страницу
 
 
 def show_news(request, post):
@@ -34,6 +34,10 @@ def show_news(request, post):
     if request.GET:
         print("Request.GET ->", request.GET)
     return HttpResponse(f"<h1>Pages to news on 1 news</h1><p>{post}</p>")
+
+
+def arhiv_news(request):
+    return render(request, 'Clinica/arhiv_news.html')
 
 
 def archive(request, year):

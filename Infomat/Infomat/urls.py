@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings                #для отладки
+from django.conf.urls.static import static      #для отладки
 from django.views.generic import TemplateView
 from django.views.decorators.cache import cache_page
 from Clinica.views import *     # import all views
@@ -25,4 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Clinica.urls')),
 ]
+
+if settings.DEBUG: #подгрузка фото на отладочном сервере(на боевом будут другие настройки)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 handler404 = pageNotFound

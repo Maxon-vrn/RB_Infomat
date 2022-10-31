@@ -61,7 +61,17 @@ body{
 	text-decoration: none;
 	color: white;
 }
+/*.page {
+    overflow:hidden;
+    display: grid;
+    grid-template-rows: auto 1rf auto;
+    min-height: 200vh;
+}*/
+
 /* footer */
+.footers{
+    background-color: rgba(33, 37, 41);
+}
 /* This style sets the width of all images to 100%: */
 img {
     max-width: 100%;
@@ -71,6 +81,6 @@ img {
     background-image: url("../images/map.png");
     background-size: auto;
     width: 1000px;
-    height: 320px;
+    height: 280px;
     /*border: solid 2px red;*/
 }
